@@ -46,4 +46,71 @@ public class TicTacToeTest {
     public void tooManyOMoves() {
         assertEquals(Evaluation.UnreachableState, TicTacToe.evaluateBoard("O-XXO-O--"));
     }
+    // covers Xwins
+    @Test
+    public void firstColumnXWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("X-OXO-X--"));
+    }
+    @Test
+    public void secondColumnXWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("OX--X--XX"));
+    }
+    @Test
+    public void thirdColumnXWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("O-X-OX--X"));
+    }
+    @Test
+    public void firstRowXWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("XXXO---O-"));
+    }
+    @Test
+    public void secondRowXWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("-O-XXX-O-"));
+    }
+    @Test
+    public void thirdRowXWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("-O-O--XXX"));
+    }
+    @Test
+    public void leftDiagonalXWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("XOO-X---X"));
+    }
+    @Test
+    public void rightDiagonalXWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("-OX-XOX--"));
+    }
+    // covers Owins
+    @Test
+    public void firstColumnOWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("OXXO-XO--"));
+    }
+    @Test
+    public void secondColumnOWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("XOXXO--O-"));
+    }
+    @Test
+    public void thirdColumnOWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("XXO-XO--O"));
+    }
+    @Test
+    public void firstRowOWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("OOOXX--X-"));
+    }
+    @Test
+    public void secondRowOWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("XX-OOOX--"));
+    }
+    @Test
+    public void thirdRowOWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("X--XX-OOO"));
+    }
+    @Test
+    public void leftDiagonalOWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("OXXXO---O"));
+    }
+    @Test
+    public void rightDiagonalOWins() {
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("XXO-OXO--"));
+    }
+    // covers NoWinner
 }
