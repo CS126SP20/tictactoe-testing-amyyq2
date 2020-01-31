@@ -18,7 +18,18 @@ public class TicTacToe {
         if (OMoves > XMoves) {
             return Evaluation.UnreachableState;
         }
-
+        if (checkWinner(boardState) == 'X' && OMoves == XMoves) {
+            return Evaluation.UnreachableState;
+        }
+        if (checkWinner(boardState) == 'O' && XMoves > OMoves) {
+            return Evaluation.UnreachableState;
+        }
+        if (checkWinner(boardState) == 'X') {
+            return Evaluation.Xwins;
+        }
+        if (checkWinner(boardState) == 'O') {
+            return Evaluation.Owins;
+        }
         return Evaluation.NoWinner;
     }
     public static int getXMoves(String boardState) {

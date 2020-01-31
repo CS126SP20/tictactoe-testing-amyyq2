@@ -31,7 +31,7 @@ public class TicTacToeTest {
         assertEquals(Evaluation.UnreachableState, TicTacToe.evaluateBoard("XO--OXXOX"));
     }
     @Test
-    public void bothWim() {
+    public void bothWin() {
         assertEquals(Evaluation.UnreachableState, TicTacToe.evaluateBoard("XXXOOO---"));
     }
     // XMoves > OMoves + 1
@@ -55,7 +55,7 @@ public class TicTacToeTest {
     }
     @Test
     public void secondColumnXWins() {
-        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("OX--X--XX"));
+        assertEquals(Evaluation.Xwins, TicTacToe.evaluateBoard("OX--X-OX-"));
     }
     @Test
     public void thirdColumnXWins() {
@@ -121,12 +121,13 @@ public class TicTacToeTest {
     }
     @Test
     public void filledBoard() {
-        assertEquals(Evaluation.NoWinner, TicTacToe.evaluateBoard("XOXOXOXOX"));
+        assertEquals(Evaluation.NoWinner, TicTacToe.evaluateBoard("xXooXXxoo"));
     }
     @Test
     public void noWinnerBoard() {
-        assertEquals(Evaluation.NoWinner, TicTacToe.evaluateBoard("O-XXXOO--"));
+        assertEquals(Evaluation.NoWinner, TicTacToe.evaluateBoard("O-XxXoO--"));
     }
+    // test helper methods
     @Test
     public void testGetXMoves() {
         assertEquals(3, TicTacToe.getXMoves("XOxoaXb2-"));
@@ -137,11 +138,11 @@ public class TicTacToeTest {
     }
     @Test
     public void checkWinnerXWins() {
-        assertEquals('X', TicTacToe.checkWinner("XxXOO2abc"));
+        assertEquals('X', TicTacToe.checkWinner("XxXOO2a-c"));
     }
     @Test
     public void checkWinnerOWins() {
-        assertEquals('O', TicTacToe.checkWinner("oOOXXO123"));
+        assertEquals('O', TicTacToe.checkWinner("oOOXXO1.3"));
     }
 
 }
