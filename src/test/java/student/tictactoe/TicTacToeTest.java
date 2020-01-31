@@ -44,6 +44,10 @@ public class TicTacToeTest {
     public void tooManyOMoves() {
         assertEquals(Evaluation.UnreachableState, TicTacToe.evaluateBoard("O-XXO-O--"));
     }
+    @Test
+    public void caseInsensitiveUnreachableState() {
+        assertEquals(Evaluation.UnreachableState, TicTacToe.evaluateBoard("XxXoOO-ab"));
+    }
     // covers Xwins
     @Test
     public void firstColumnXWins() {
@@ -122,5 +126,13 @@ public class TicTacToeTest {
     @Test
     public void noWinnerBoard() {
         assertEquals(Evaluation.NoWinner, TicTacToe.evaluateBoard("O-XXXOO--"));
+    }
+    @Test
+    public void testGetXMoves() {
+        assertEquals(3, "XOxoaXbc-");
+    }
+    @Test
+    public void testGetOMoves() {
+        assertEquals(3, "XOxoaoXbc");
     }
 }
