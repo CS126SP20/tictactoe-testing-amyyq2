@@ -129,10 +129,19 @@ public class TicTacToeTest {
     }
     @Test
     public void testGetXMoves() {
-        assertEquals(3, "XOxoaXbc-");
+        assertEquals(3, TicTacToe.getXMoves("XOxoaXb2-"));
     }
     @Test
     public void testGetOMoves() {
-        assertEquals(3, "XOxoaoXbc");
+        assertEquals(3, TicTacToe.getOMoves("XOxoao3bc"));
     }
+    @Test
+    public void checkWinnerXWins() {
+        assertEquals('X', TicTacToe.checkWinner("XxXOO2abc"));
+    }
+    @Test
+    public void checkWinnerOWins() {
+        assertEquals('O', TicTacToe.checkWinner("oOOXXO123"));
+    }
+
 }
