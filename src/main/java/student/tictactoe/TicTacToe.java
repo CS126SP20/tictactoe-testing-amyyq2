@@ -3,6 +3,11 @@ package student.tictactoe;
 import student.tictactoe.Evaluation;
 
 public class TicTacToe {
+    /**
+     * Analyzes the state of the board and returns corresponding Evaluation value
+     * @param boardState
+     * @return Evaluation value
+     */
     public static Evaluation evaluateBoard(String boardState) {
         if (boardState == null) {
             return Evaluation.InvalidInput;
@@ -32,6 +37,12 @@ public class TicTacToe {
         }
         return Evaluation.NoWinner;
     }
+
+    /**
+     * Gets number of X moves
+     * @param boardState Assume valid board state
+     * @return XMoves
+     */
     public static int getXMoves(String boardState) {
         int XMoves = 0;
         for (int i = 0; i < boardState.length(); i++) {
@@ -41,6 +52,12 @@ public class TicTacToe {
         }
         return XMoves;
     }
+
+    /**
+     * Gets number of O moves
+     * @param boardState Assume valid board state
+     * @return OMoves
+     */
     public static int getOMoves(String boardState) {
         int OMoves = 0;
         for (int i = 0; i < boardState.length(); i++) {
@@ -50,6 +67,12 @@ public class TicTacToe {
         }
         return OMoves;
     }
+
+    /**
+     * Checks board for winner
+     * @param boardState Assume valid board state
+     * @return 'X' if X wins, 'O' if O wins, 'n' if no winner
+     */
     public static char checkWinner(String boardState) {
         Character[][] board = new Character[3][3];
         int currentPosition = 0;
@@ -96,6 +119,6 @@ public class TicTacToe {
                 return 'O';
             }
         }
-        return 'x';
+        return 'n';
     }
 }
